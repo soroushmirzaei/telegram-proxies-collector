@@ -770,23 +770,69 @@ html_string = '''<html>
   </body>
 </html>'''
 
-style_string = '''table {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  th, td {
-    padding: 15px;
-    text-align: center;
-    width: auto;
-    border-bottom: 1px solid #777777;
-  }
-  @media screen and (max-width: 600px) {
-    table {
-      display: block;
-      overflow-x: auto;
+style_string = '''body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
-  }'''
+    table {
+      width: 100%;
+      max-width: 800px;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #eeeeee;
+    }
+    th {
+      background-color: #f9fafc;
+      font-weight: 600;
+      color: #555;
+    }
+    tr:hover {
+      background-color: #f1f4f9;
+    }
+    td:last-child a button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+    td:last-child a button:hover {
+      background-color: #0056b3;
+    }
+    @media screen and (max-width: 600px) {
+      table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      th, td {
+        padding: 10px;
+        font-size: 14px;
+      }
+      td:last-child a button {
+        padding: 8px 16px;
+        font-size: 12px;
+      }
+    }'''
 
 # Create dataframe based on proxies list
 proxy_dataframe = pd.DataFrame(modified_proxies, columns = ['Flag', 'Country', 'Code', 'Server', 'Port', 'Ping', 'Proxy'])

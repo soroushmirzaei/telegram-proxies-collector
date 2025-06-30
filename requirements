@@ -1,0 +1,11 @@
+wget
+pandas
+requests
+beautifulsoup4
+dnspython
+geoip2
+jdatetime
+pycountry_convert
+aiohttp
+aiodns
+beautifulsoup4
